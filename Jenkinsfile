@@ -24,7 +24,7 @@ pipeline {
                    ], 
                    credentialsId: 'NexusCreds', 
                    groupId: 'in.javahome', 
-                   nexusUrl: 'localhost:8081', 
+                   nexusUrl: 'localhost:8081/', 
                    nexusVersion: 'nexus3', 
                    protocol: 'http', 
                    repository: 'simpleapp', 
