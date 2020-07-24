@@ -20,4 +20,12 @@
 
 	</dependencies>
 	
+	 <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>simpleapp</name>
+            <url>http://192.168.0.101:8081/repository/simpleapp/</url>
+        </repository>
+    </distributionManagement>
+	
 </project>
