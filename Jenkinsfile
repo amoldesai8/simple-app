@@ -1,18 +1,18 @@
 pipeline {
     agent any
     tools {
-        maven 'maven3'
+        maven 'maven'
     }
 
     stages{
         stage('Build'){
             steps{
-                 bat script: 'mvn clean package'
+                 sh script: 'mvn clean package'
             }
         }
         stage('Upload War To Nexus'){
             steps{
-                script{
+                
                nexusArtifactUploader artifacts: 
                    [
                    [
@@ -22,15 +22,13 @@ pipeline {
                     type: 'war'
                    ]
                    ], 
-                   credentialsId: 'NexusCredentials', 
+                   credentialsId: 'NexusCreds', 
                    groupId: 'in.javahome', 
                    nexusUrl: 'localhost:8081', 
                    nexusVersion: 'nexus3', 
                    protocol: 'http', 
                    repository: 'simpleapp', 
                    version: '1.0.0'
-                     
-                    }
             }
         }
     }
